@@ -1,0 +1,571 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Races"
+    BEGIN
+        MENUITEM "Race &Properties",            ID_RACES_PROPERTIES
+        MENUITEM "Load Races",                  ID_RACES_LOAD
+        MENUITEM "Ballot &Properties",          ID_RACES_BALLOTPROPERTIES
+    END
+    POPUP "&Printing"
+    BEGIN
+        MENUITEM "&Align Printer",              ID_PRINTING_ALIGN
+        MENUITEM "Print",                       ID_PRINTING_PRINT
+        MENUITEM "Ballot History",              ID_PRINTING_HISTORY
+        POPUP "Sample Ballot"
+        BEGIN
+            MENUITEM "All",                         ID_SAMPLEBALLOT_AL
+            MENUITEM "Freshmen",                    ID_SAMPLEBALLOT_FR
+            MENUITEM "Sophomore",                   ID_SAMPLEBALLOT_SO
+            MENUITEM "Junior",                      ID_SAMPLEBALLOT_JR
+            MENUITEM "Senior",                      ID_SAMPLEBALLOT_SR
+            MENUITEM "Graduate",                    ID_SAMPLEBALLOT_GR
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Lock Ballots",                ID_PRINTING_LOCK
+    END
+    POPUP "&Counting"
+    BEGIN
+        MENUITEM "Students",                    ID_COUNTING_STUDENTS
+        MENUITEM SEPARATOR
+        MENUITEM "&New Count",                  ID_COUNTING_NEW
+        MENUITEM "&Open Count",                 ID_COUNTING_OPEN
+        MENUITEM "&Save Count",                 ID_COUNTING_SAVE
+        MENUITEM "Save Count As",               ID_COUNTING_SAVE_AS
+        MENUITEM "Count Properties",            ID_COUNTING_PROPERTIES
+        MENUITEM SEPARATOR
+        MENUITEM "Scan",                        ID_COUNTING_SCAN
+        MENUITEM "Report Ballot Lost/Destroyed\tDel", ID_COUNTING_REPORTLD
+        MENUITEM SEPARATOR
+        MENUITEM "Export Report",               ID_COUNTING_EXPORT
+        MENUITEM "Ballot Information",          ID_COUNTING_INFORMATION
+    END
+    POPUP "&Time"
+    BEGIN
+        MENUITEM "&Sync Time",                  ID_TIME_SYNC
+        MENUITEM "&AutoSync",                   ID_TIME_AUTOSYNC
+        MENUITEM "&Time Server",                ID_TIME_SERVER
+    END
+    MENUITEM "&About",                      ID_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_COUNTING_REPORTLD,   VIRTKEY, NOINVERT
+    VK_RETURN,      ID_RETURN,              VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 384, 303
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About ElectSoft"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "BehnWare Enterprises ElectSoft",IDC_STATIC,40,10,103,8,
+                    SS_NOPREFIX
+    LTEXT           "By Edward Behn - Covered under GPL 2",IDC_STATIC,40,25,
+                    132,8
+    DEFPUSHBUTTON   "OK",IDOK,327,7,50,14,WS_GROUP
+    CONTROL         "",IDC_GPL,"RICHEDIT",ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | WS_BORDER | WS_VSCROLL,7,44,370,252
+END
+
+IDD_ELECTSOFT_FORM DIALOG DISCARDABLE  0, 0, 511, 291
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tab1",IDC_MAINTAB,"SysTabControl32",0x0,443,25,45,34
+    CONTROL         "List1",IDC_RACELIST_FR,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,103,16,60,38
+    CONTROL         "List2",IDC_SCANBALLOTS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,279,20,85,40
+    CONTROL         "List3",IDC_STUDENTLIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,184,15,73,45
+    CONTROL         "List4",IDC_PRINTBALLOTS_AL,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,55,193,82,37
+    CONTROL         "List4",IDC_PRINTBALLOTS_JR,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,159,238,82,37
+    CONTROL         "List4",IDC_PRINTBALLOTS_SR,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,258,186,82,37
+    CONTROL         "List4",IDC_PRINTBALLOTS_SO,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,149,192,82,37
+    CONTROL         "List4",IDC_PRINTBALLOTS_GR,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,259,238,82,37
+    CONTROL         "List4",IDC_PRINTBALLOTS_FR,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,52,238,82,37
+    CONTROL         "List1",IDC_RACELIST_AL,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,25,20,60,38
+    CONTROL         "List1",IDC_RACELIST_SO,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,32,71,60,38
+    CONTROL         "List1",IDC_RACELIST_JR,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,97,73,60,38
+    CONTROL         "List1",IDC_RACELIST_SR,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,19,126,60,38
+    CONTROL         "List1",IDC_RACELIST_GR,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,104,131,60,38
+END
+
+IDD_BP DIALOG DISCARDABLE  0, 0, 139, 121
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Ballot Properties"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "Title:",IDC_STATIC,7,9,75,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_TITLE,90,7,42,12,ES_AUTOHSCROLL
+    RTEXT           "Current Year:",IDC_STATIC,7,24,75,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_CURR_YEAR,90,23,42,12,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Freshmen Class Year:",IDC_STATIC,7,39,75,8,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_FR_YEAR,90,37,42,12,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Sophomore Class Year:",IDC_STATIC,7,54,75,8,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_SO_YEAR,90,52,42,12,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Junior Class Year:",IDC_STATIC,7,69,75,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_JR_YEAR,90,67,42,12,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Senor Class Year:",IDC_STATIC,7,84,75,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_SR_YEAR,90,82,42,12,ES_AUTOHSCROLL | ES_NUMBER
+    DEFPUSHBUTTON   "OK",IDOK,7,100,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,82,100,50,14
+END
+
+IDD_BALLOTORDER DIALOG DISCARDABLE  0, 0, 101, 135
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Ballots Order"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "Size:",IDC_STATIC,7,9,20,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_ORDER,34,7,60,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_ORDER,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,83,7,11,14
+    GROUPBOX        "Class Year",IDC_STATIC,7,21,87,73
+    CONTROL         "All",IDC_AL,"Button",BS_AUTORADIOBUTTON | WS_GROUP,17,
+                    30,44,11
+    CONTROL         "Freshmen",IDC_FR,"Button",BS_AUTORADIOBUTTON,17,41,48,8
+    CONTROL         "Sophomore",IDC_SO,"Button",BS_AUTORADIOBUTTON,17,51,52,
+                    8
+    CONTROL         "Junior",IDC_JR,"Button",BS_AUTORADIOBUTTON,17,61,36,8
+    CONTROL         "Senior",IDC_SR,"Button",BS_AUTORADIOBUTTON,17,71,38,8
+    CONTROL         "Graduate",IDC_GR,"Button",BS_AUTORADIOBUTTON,17,81,46,8
+    LTEXT           "Alignment Rate:",IDC_STATIC,7,99,50,8
+    EDITTEXT        IDC_AR,61,97,33,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_AR,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,83,98,11,12
+    DEFPUSHBUTTON   "OK",IDOK,7,114,37,14
+    PUSHBUTTON      "Cancel",IDCANCEL,57,114,37,14
+END
+
+IDD_COMM DIALOG DISCARDABLE  0, 0, 245, 135
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Comm Port Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "Comm Port:",IDC_STATIC,7,9,40,8
+    COMBOBOX        IDC_PORT,57,7,66,15,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "Baud Rate",IDC_STATIC,7,23,57,83
+    CONTROL         "38400 bps",IDC_B_38400,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,14,33,48,8
+    CONTROL         "19200 bps",IDC_B_19200,"Button",BS_AUTORADIOBUTTON,14,
+                    48,48,8
+    CONTROL         "9600 bps",IDC_B_9600,"Button",BS_AUTORADIOBUTTON,14,63,
+                    48,8
+    CONTROL         "2400 bps",IDC_B_2400,"Button",BS_AUTORADIOBUTTON,14,78,
+                    48,8
+    CONTROL         "1200 bps",IDC_B_1200,"Button",BS_AUTORADIOBUTTON,14,93,
+                    48,8
+    RTEXT           "Read Interval Timeout:",IDC_STATIC,101,33,74,8
+    EDITTEXT        IDC_RIT,183,31,55,12,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Read Total Timeout Multiplier:",IDC_STATIC,76,48,99,8
+    EDITTEXT        IDC_RTTM,183,46,55,12,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Read Total Timeout Constant:",IDC_STATIC,71,63,104,8
+    EDITTEXT        IDC_RTTC,183,61,55,12,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Write Total Timeout Multiplier:",IDC_STATIC,78,78,97,8
+    EDITTEXT        IDC_WTTM,183,76,55,12,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Write Total Timout Constant:",IDC_STATIC,81,93,94,8
+    EDITTEXT        IDC_WTTC,183,91,55,12,ES_AUTOHSCROLL | ES_NUMBER
+    DEFPUSHBUTTON   "OK",IDOK,7,114,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,188,114,50,14
+END
+
+IDD_COUNT DIALOG DISCARDABLE  0, 0, 125, 47
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Count"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "Title: ",IDC_STATIC,7,9,18,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_TITLE,38,7,80,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,7,26,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,68,26,50,14
+END
+
+IDD_TIMESERVER DIALOG DISCARDABLE  0, 0, 236, 47
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Time Server"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "Server:",IDC_STATIC,7,9,26,8
+    EDITTEXT        IDC_SERVER,40,7,189,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,7,26,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,179,26,50,14
+END
+
+IDD_PRINTBALLOT DIALOG DISCARDABLE  0, 0, 174, 134
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Print Ballot"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_EVENTS,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,7,7,160,120
+END
+
+IDD_RACE DIALOG DISCARDABLE  0, 0, 248, 126
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Race"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,132,88,109,31
+    CONTROL         "Tree1",IDC_DATA,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_EDITLABELS | WS_BORDER | WS_TABSTOP,7,
+                    7,118,112
+    LTEXT           "Description:",IDC_STATIC,132,7,109,8
+    CONTROL         "",IDC_DESCRIPTION,"RICHEDIT",ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,132,20,
+                    109,61
+END
+
+IDD_SCANBALLOT DIALOG DISCARDABLE  0, 0, 206, 153
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Scan Ballot"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,132,192,14
+    CONTROL         "",IDC_VOTES,"RICHEDIT",ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | WS_BORDER | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP,7,7,192,117
+END
+
+IDD_ALIGN DIALOG DISCARDABLE  0, 0, 174, 162
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Ballot Alignment"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,141,160,14
+    CONTROL         "Slider1",IDC_SLIDER_T,"msctls_trackbar32",TBS_VERT | 
+                    TBS_NOTICKS | WS_TABSTOP,7,7,12,60
+    CONTROL         "Slider2",IDC_SLIDER_B,"msctls_trackbar32",TBS_VERT | 
+                    TBS_NOTICKS | WS_TABSTOP,7,67,12,60
+    CONTROL         "Slider3",IDC_SLIDER_L,"msctls_trackbar32",TBS_TOP | 
+                    TBS_NOTICKS | WS_TABSTOP,19,127,70,11
+    CONTROL         "Slider4",IDC_SLIDER_R,"msctls_trackbar32",TBS_TOP | 
+                    TBS_NOTICKS | WS_TABSTOP,93,127,74,12
+    CONTROL         "",IDC_IMAGE,"Static",SS_BLACKFRAME,19,7,148,120
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "ElectSoft was written for use by the Rules and Elections Committee of the  RPI Student Senate.  It may, however, be used by any organization.           \0"
+            VALUE "CompanyName", "BehnWare Enterprises\0"
+            VALUE "FileDescription", "ElectSoft\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "ElectSoft\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003 Under GPL ver. 2\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "ElectSoft.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "BehnWare Enterprises ElectSoft\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 377
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 296
+    END
+
+    IDD_ELECTSOFT_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 504
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 284
+    END
+
+    IDD_BP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 132
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_BALLOTORDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 94
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+        HORZGUIDE, 103
+    END
+
+    IDD_COMM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_COUNT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 118
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 40
+    END
+
+    IDD_TIMESERVER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 229
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 40
+    END
+
+    IDD_PRINTBALLOT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 167
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 127
+    END
+
+    IDD_RACE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 241
+        VERTGUIDE, 125
+        VERTGUIDE, 132
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 119
+        HORZGUIDE, 81
+        HORZGUIDE, 88
+    END
+
+    IDD_SCANBALLOT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 199
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 146
+    END
+
+    IDD_ALIGN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 167
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 155
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "program.ico"
+IDI_ELECTION            ICON    DISCARDABLE     "election.ico"
+IDI_COUNT               ICON    DISCARDABLE     "count.ico"
+IDI_STUDENTS            ICON    DISCARDABLE     "students.ico"
+IDI_RACES               ICON    DISCARDABLE     "races.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "ElectSoft\nElection\nElection\nElection File (*.els)\n.els\nElectSoftFile\nElectSoft File"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "ElectSoft"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
